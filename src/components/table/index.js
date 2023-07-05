@@ -6,6 +6,13 @@ import CornerSvg from "../svg/cornerSvg";
 
 const TableCell = ({cell, isHover, setHover}) => {
   const [day, level] = cell
+  const  options = {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    timezone: 'UTC'
+  };
+  const dayRu = new Date(day).toLocaleString("ru", options)
 
   const bgColor = (lv) => {
     if (!lv) {
@@ -32,7 +39,7 @@ const TableCell = ({cell, isHover, setHover}) => {
         <div className='corner-svg'>
           <div className='hover-board'>
             <h1 className='hover-board--title'>{level} contributions</h1>
-            <h1 className='hover-board--date'>{day}</h1>
+            <h1 className='hover-board--date'>{dayRu}</h1>
           </div>
           <CornerSvg/>
         </div>
