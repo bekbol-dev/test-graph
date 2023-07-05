@@ -1,4 +1,4 @@
-import React, {useRef} from 'react';
+import React from 'react';
 import {useEffect, useState} from "react";
 import axios from "axios";
 import {DEFAULT_BG_CELL, lastActualDays, URL_API} from "../../helpers/constants";
@@ -59,6 +59,12 @@ const Table = ({localData}) => {
   useEffect(() => {
     getData()
   }, [])
+
+  document.addEventListener('click', (evt) => {
+    if (!evt.target.classList.contains('cell')){
+      setHover(false)
+    }
+  })
 
   return (
     <div className='table'>

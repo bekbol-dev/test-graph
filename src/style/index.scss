@@ -12,6 +12,19 @@
   flex-direction: column;
   align-items: start;
   width: 70%;
+  &--month{
+    display: flex;
+    flex-wrap: nowrap;
+    margin-left: $weeks-width +5px;
+    &--item{
+      text-align: center;
+      font-family: Inter, sans-serif;
+      font-size: 12px;
+      width: $box-size * 5.2;
+      color:#959494;
+      font-weight: 400;
+    }
+  }
   &--row{
     display: flex;
     align-items: start;
@@ -20,7 +33,7 @@
     &--weeks{
       display: flex;
       flex-direction: column;
-      //justify-content: space-between;
+      width: $weeks-width;
       align-items: center;
       height: 100%;
       margin: 0 2px;
